@@ -1,0 +1,34 @@
+title: <short descriptive transaction title>
+rationale: <why this canon update is needed>
+authority: assistant-proposed
+branch: mainline
+source_locators:
+  - conversation:<session>#turn-<number>
+operations:
+  - op: create
+    record:
+      kind: entity
+      id: entity.<slug>
+      type: <person|place|faction|institution|culture|artifact|concept>
+      label: <display-name>
+      aliases: []
+      status: provisional
+      authority: assistant-proposed
+      confidence: plausible
+      visibility: author-only
+      branch: mainline
+      summary: <one precise sentence>
+      scope: null
+      dependencies: []
+      relationships: []
+      attributes: {}
+      sources: []
+      supersedes: null
+      redirects_to: null
+  - op: update
+    target_id: entity.<existing-slug>
+    set:
+      summary: <revised summary>
+  - op: deprecate
+    target_id: claim.<existing-slug>
+    supersedes: claim.<replacement-slug>

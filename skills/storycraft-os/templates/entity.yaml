@@ -1,0 +1,26 @@
+# Storycraft OS — Entity Registry starter
+# One record per place, faction, institution, culture, person, artifact,
+# species, technology, language, belief system, or recurring phenomenon.
+# See references/world-artifacts.md §2. Duplicate this block per entity.
+
+entity:
+  id: ""                 # e.g. fac-001, per-001, pla-001 — stable, never reused or renamed
+  type: ""                # faction | institution | person | place | culture | technology | magic | language | belief-system | phenomenon | artifact | species
+  name: ""
+  aliases: []             # keep separate from the canonical name
+  status: provisional      # approved | provisional | disputed | deprecated
+  summary: ""              # one precise sentence
+  scope: ""                # geographic / social / temporal domain
+  dependencies: []         # ids of entities or systems this one requires to make sense
+  relationships:           # each relationship points at another entity id
+    - target: ""
+      direction: ""        # e.g. one-way, mutual
+      kind: ""              # e.g. rival, patron, subject, ally, kin
+      status: ""             # active | dormant | broken | historical
+      evidence: []
+  resources: []
+  beliefs_and_values: []
+  constraints: []
+  public_knowledge: []
+  private_knowledge: []
+  sources: []               # decision-id or event-id that established this record

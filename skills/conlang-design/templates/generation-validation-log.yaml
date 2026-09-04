@@ -1,0 +1,63 @@
+# Copy one record per candidate batch or consequential generated form.
+# Keep proposed items separate from approved canon until promotion is recorded.
+
+batch:
+  id: GEN-YYYY-MM
+  language_version: 0.1.0
+  configuration_source: language.json
+  method: rule_based | assisted | manual_batch
+  seed: null
+  operator: null
+  created_at: YYYY-MM-DD
+  purpose: Describe the semantic or design need.
+
+contract:
+  tokenization: longest_match
+  normalization: NFC
+  inventory_version: null
+  templates: []
+  rewrite_order: []
+  hard_constraints: []
+  preference_note: Weights or frequency tendencies guide selection but do not define legality.
+
+candidates:
+  - id: GC-0001
+    raw_form: null
+    input_tokens: []
+    rendered_form: null
+    derivation:
+      - step: 1
+        rule: null
+        before: []
+        after: []
+        result: No rule applied yet.
+    checks:
+      inventory: pending | pass | fail | exception
+      tokenization: pending | pass | fail | exception
+      phonotactics: pending | pass | fail | exception
+      rewrite_trace: pending | pass | fail | exception
+      spelling_conversion: not_applicable | pending | pass | fail | exception
+      unicode_normalization: pending | pass | fail | exception
+      collision: pending | pass | fail | exception
+      constraints: pending | pass | fail | exception
+    review:
+      phonological_fit: pending | accept | reject | hold
+      semantic_fit: pending | accept | reject | hold
+      cultural_or_register_fit: pending | accept | reject | hold
+      corpus_utility: pending | accept | reject | hold
+      notes: null
+    decision:
+      status: generated | filtered | reserved | proposed | approved | rejected
+      rationale: null
+      related_lexeme: null
+      related_sense: null
+      decision_id: null
+      required_tests: []
+
+summary:
+  generated: 0
+  rejected: 0
+  reserved: 0
+  proposed: 0
+  approved: 0
+  outstanding_actions: []

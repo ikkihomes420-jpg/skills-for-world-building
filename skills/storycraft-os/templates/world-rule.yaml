@@ -1,0 +1,14 @@
+# Storycraft OS — world rule
+# Copy once for a constraint that governs multiple future decisions.
+id: rule-001
+layer: physical # physical | metaphysical | social | technological | magical | informational | temporal
+statement: null
+scope: []
+strength: default # invariant | default | local-custom | disputed
+triggers: []
+consequences: []
+exceptions: []
+authority: author-decision # natural-law | institution | culture | technology | magic | author-decision
+status: provisional # approved | provisional | deprecated
+evidence: []
+supersedes: null

@@ -1,0 +1,21 @@
+kind: entity
+id: entity.<slug>
+type: <person|place|faction|institution|culture|artifact|species|technology|language|belief|concept|phenomenon>
+label: <display-name>
+aliases: []
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+visibility: author-only
+branch: mainline
+summary: <one precise sentence>
+detail: |-
+  <Optional rich context: nuance, history, motivations, boundaries, and exact
+  details that must not be reduced to the summary.>
+scope: null
+dependencies: []
+relationships: []
+attributes: {}
+sources: []
+supersedes: null
+redirects_to: null

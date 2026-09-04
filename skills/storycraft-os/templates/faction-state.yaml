@@ -1,0 +1,19 @@
+# Storycraft OS — Faction and Institution State starter
+# One record per active faction/institution actor state.
+# See references/world-artifacts.md §4.
+
+faction_state:
+  entity_id: ""            # must match an entity.id of type faction/institution
+  objective_now: null
+  long_horizon: null
+  capabilities: []
+  vulnerabilities: []
+  resources: []
+  constraints: []
+  internal_divisions: []
+  external_relationships: []
+  public_position: null
+  private_agenda: null
+  current_pressure: null
+  knowledge_ids: []         # ids into the knowledge ledger
+  updated_by: []             # event-id(s) that most recently changed this state

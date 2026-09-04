@@ -1,0 +1,11 @@
+{
+  "id_column": "ID",
+  "form_column": "Form",
+  "required_columns": ["ID", "Form", "IPA", "POS", "Gloss", "Status"],
+  "graphemes": ["a", "e", "i", "o", "u", "p", "t", "k", "m", "n", "s", "l", "r"],
+  "illegal_sequences": [],
+  "allow_duplicate_forms": false,
+  "allow_spaces": false,
+  "allow_empty_optional_columns": true,
+  "allowed_statuses": ["approved", "provisional", "deprecated", "exception"]
+}

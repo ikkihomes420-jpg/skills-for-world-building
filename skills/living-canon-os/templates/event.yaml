@@ -1,0 +1,19 @@
+kind: event
+id: event.<slug>
+label: <event-name>
+date_or_sequence: null
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+branch: mainline
+summary: <what occurred>
+detail: |-
+  <Optional rich historical context, perspective differences, specific scenes,
+  or causal nuance that later reasoning may need.>
+causes: []
+immediate_effects: []
+delayed_effects: []
+affected_ids: []
+sources: []
+knowledge_accounts: []
+counterfactual_branch: null

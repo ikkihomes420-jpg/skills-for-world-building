@@ -1,0 +1,21 @@
+kind: rule
+id: rule.<slug>
+label: <short-rule-name>
+statement: <what is normally true>
+detail: |-
+  <Optional rationale, interpretation guidance, historical origin, examples,
+  and boundaries that make the rule usable in detailed work.>
+layer: <physical|metaphysical|social|technological|magical|informational|temporal>
+strength: default
+scope: []
+triggers: []
+consequences: []
+exceptions: []
+authority_type: author-decision
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+visibility: author-only
+branch: mainline
+sources: []
+supersedes: null

@@ -1,0 +1,14 @@
+# Storycraft OS — canon change set
+id: chg-001
+from_version: 0.2.0
+to_version: 0.3.0
+status: proposed # proposed | approved | applied | reverted
+changes:
+  - action: modify # add | modify | deprecate | redirect | split | merge
+    target_id: null
+    replacement_ids: []
+    rationale: null
+    expected_impacts: []
+    migration_notes: null
+verification: []
+author_decision: null

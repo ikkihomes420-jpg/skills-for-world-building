@@ -1,0 +1,32 @@
+# Copy and adapt before collecting evidence across multiple items.
+# The validator checks structure and leaves factual verification to the research workflow.
+research_spec:
+  topic: Example topic
+  question: What decision-relevant comparison or characterization is needed?
+  purpose: Inform a defined decision, report, or research direction.
+  scope:
+    included: [Define the relevant objects, population, or systems.]
+    excluded: [Define material exclusions.]
+    time_boundary: "As of YYYY-MM-DD"
+    geography_or_context: Global
+  objects:
+    - id: OBJ-001
+      name: Example object
+      rationale: Explain why this object belongs in scope.
+      status: planned
+  fields:
+    - name: Example field
+      description: Define the field and the permitted interpretation.
+      evidence_type: primary_source
+      required: true
+  evidence_standard:
+    minimum_sources_per_material_claim: 1
+    preferred_source_types: [primary_source, original_paper, official_dataset]
+    source_cutoff: "YYYY-MM-DD"
+  completion_criteria:
+    - Every in-scope object has every required field sourced or explicitly marked uncertain.
+    - Every material claim links to evidence and states its scope.
+  human_checkpoint:
+    required_before: [material scope change, method change, material conclusion]
+    approver: user
+  status: draft

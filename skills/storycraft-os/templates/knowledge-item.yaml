@@ -1,0 +1,14 @@
+# Storycraft OS — Knowledge Ledger starter
+# Separate what happened, what each actor believes, what the public believes,
+# and what a player/reader knows. See references/world-artifacts.md §6.
+
+knowledge_item:
+  id: ""                      # e.g. know-001
+  proposition: ""
+  truth_status: unknown         # verified | believed | contested | false | unknown
+  holders: []                    # entity ids who hold this knowledge
+  channel: witness               # witness | rumor | archive | dispatch | press | divination | inference
+  reliability: unknown            # high | mixed | low | unknown
+  date_or_sequence: null
+  public_status: secret            # secret | private | restricted | public | mythic
+  sources: []

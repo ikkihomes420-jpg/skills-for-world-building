@@ -1,0 +1,14 @@
+title: <descriptive discussion title>
+summary: <optional short index only; do not replace important detail>
+content: |-
+  <Preserve the actual exploration, alternatives, reasoning, examples, and
+  uncertainty that may matter later. This is not a canon statement.>
+disposition: exploratory
+detail_level: detailed
+source_locators:
+  - conversation:<session>#turn-<number>
+related_ids: []
+tags: []
+branch: mainline
+authority: user-approved
+visibility: author-only

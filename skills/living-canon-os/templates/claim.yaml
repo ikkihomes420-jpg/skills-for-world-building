@@ -1,0 +1,17 @@
+kind: claim
+id: claim.<slug>
+label: <short-title>
+statement: <the proposition>
+detail: |-
+  <Optional exact rationale, caveats, scope, examples, and contextual detail
+  needed to interpret the proposition accurately.>
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+truth_status: unknown
+visibility: author-only
+branch: mainline
+affected_ids: []
+support: []
+contradicts: []
+notes: null

@@ -1,0 +1,15 @@
+# Storycraft OS — Timeline / Event starter
+# See references/world-artifacts.md §5.
+
+event:
+  id: ""                        # e.g. evt-001
+  date_or_sequence: null
+  name: ""
+  status: proposed               # proposed | approved | disputed | superseded
+  causes: []                      # event/decision/condition ids
+  event: ""                        # what occurred, one clear sentence
+  immediate_effects: []
+  delayed_effects: []
+  affected_entities: []
+  sources: []
+  counterfactual_branch: null       # set only if this event belongs to a counterfactual branch
