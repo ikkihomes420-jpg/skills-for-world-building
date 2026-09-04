@@ -1,0 +1,172 @@
+# Storycraft OS 0.3 — advanced worked bundle
+schema_version: "0.3"
+world:
+  id: reed-confederacy
+  name: The Reed Confederacy
+  version: 0.3.0
+  status: active
+  uses: [worldbuilding, campaign, simulation]
+  design_promise: Seasonal logistics and reciprocal obligation shape power more than territorial conquest.
+
+entities:
+  - id: fac-001
+    type: faction
+    name: The Reed Compact
+    aliases: [Compact]
+    status: approved
+    dependencies: [place-001]
+    relationships: [{target: place-001, kind: governs}]
+  - id: place-001
+    type: place
+    name: Namar Delta
+    aliases: []
+    status: approved
+    dependencies: []
+    relationships: []
+
+systems:
+  - id: sys-001
+    domain: economy
+    statement: Member settlements owe flood-season labor to maintain common levees.
+    inputs: [labor, grain-tax]
+    constraints: [flood-season-only]
+    linked_entities: [fac-001, place-001]
+
+decisions:
+  - id: dec-001
+    question: Will the Compact formalize a seasonal labor levy?
+    status: approved
+    affected_ids: [fac-001, sys-001]
+
+events:
+  - id: evt-001
+    date_or_sequence: Year 12, flood season
+    name: The Levee Accord
+    status: approved
+    causes: [dec-001]
+    event: The Compact formalizes seasonal labor obligations.
+    affected_entities: [fac-001, place-001]
+
+rules:
+  - id: rule-001
+    layer: social
+    statement: Labor levies are legitimate only during flood season.
+    scope: [fac-001, place-001]
+    strength: default
+    triggers: [public-works-levy]
+    consequences: [off-season-levy-invites-resistance]
+    exceptions: []
+    authority: institution
+    status: approved
+    evidence: [evt-001]
+    supersedes: null
+
+locations:
+  - id: loc-001
+    type: settlement
+    name: Reedmouth
+    parent: null
+    terrain_or_medium: delta
+    access_constraints: [flood-season-river-current]
+    controlling_entities: [fac-001]
+    status: approved
+  - id: loc-002
+    type: settlement
+    name: High Levee
+    parent: null
+    terrain_or_medium: raised-bank
+    access_constraints: []
+    controlling_entities: [fac-001]
+    status: approved
+
+connections:
+  - id: con-001
+    from: loc-001
+    to: loc-002
+    mode: river
+    availability: seasonal
+    travel_cost: one-day-downstream
+    communication_cost: same-day-by-courier
+    hazards: [flood-current]
+    rules: [rule-001]
+
+sources:
+  - id: src-001
+    kind: author-decision
+    citation_or_locator: Canon decision dec-001
+    scope: Labor-levy legitimacy.
+    reliability: high
+    use_status: verified
+    license_or_permission: author-controlled
+
+claims:
+  - id: clm-001
+    statement: Flood-season labor is a source of Compact legitimacy.
+    status: approved
+    support: [src-001]
+    confidence: confirmed
+    affected_ids: [fac-001, sys-001, rule-001]
+
+knowledge_ledger:
+  - id: know-001
+    proposition: The levee breach followed years of deferred maintenance.
+    truth_status: verified
+    holders: [fac-001]
+    public_status: restricted
+
+consequence_ledger:
+  - id: cons-001
+    origin: evt-001
+    scale: institutional
+    affected: [fac-001]
+    current_state: developing
+    next_surface: First off-season levy proposal.
+
+session_state:
+  date_or_sequence: Year 12, post-flood season
+  pause_point: The first levy notice reaches Reedmouth.
+  active_entities: [fac-001]
+  active_situations: [Toll and labor resistance are beginning to converge.]
+  consequence_ids: [cons-001]
+  open_threads: ["Will the Compact enforce an off-season levy?"]
+  player_choice_boundary: null
+  drift_watch: []
+
+state_transitions:
+  - id: turn-001
+    from_state: state-001
+    date_or_sequence: Year 12, post-flood season
+    inputs:
+      world_forces: [low-grain-reserves]
+      actor_actions: [fac-001 proposes additional levy]
+      user_or_player_action: null
+      knowledge_constraints: [know-001]
+    resolution_basis:
+      rules: [rule-001]
+      resources: [grain-surplus]
+      uncertainties: [whether market resistance becomes organized]
+    outcomes: [Public opposition emerges in Reedmouth.]
+    state_delta:
+      entities_changed: [fac-001]
+      systems_changed: [sys-001]
+      knowledge_changed: [know-001]
+      consequences_created: [cons-001]
+      consequences_resolved: []
+    next_state: state-002
+    player_choice_boundary: null
+    canon_status: provisional
+
+change_sets:
+  - id: chg-001
+    from_version: 0.2.0
+    to_version: 0.3.0
+    status: applied
+    changes:
+      - action: add
+        target_id: rule-001
+        replacement_ids: []
+        rationale: Make levy legitimacy explicit for future turns.
+        expected_impacts: [sys-001, evt-001, con-001]
+        migration_notes: No prior canon is overwritten.
+    verification: [validate_world_bundle.py --impact rule-001]
+    author_decision: dec-001

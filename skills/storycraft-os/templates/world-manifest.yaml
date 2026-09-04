@@ -1,0 +1,26 @@
+# Storycraft OS — World Manifest starter
+# Copy this file, fill every field, and treat unresolved fields as open
+# decisions rather than deleting them. See references/world-artifacts.md §1.
+
+world:
+  id: ""              # lower-kebab-case, stable, never renamed
+  name: ""
+  version: 0.1.0
+  status: draft        # draft | active | frozen | retired
+  uses: []              # e.g. [worldbuilding, game, campaign, interactive-fiction, setting-bible]
+  design_promise: >-
+    One or two sentences: what this world should feel like, what pressures
+    organize it, and what it will deliberately not attempt. This is a
+    decision filter, not marketing copy.
+  scale: regional       # local | regional | planetary | interstellar | multiversal
+  canon_sources: []     # documents, prior sessions, or reference material this world draws from
+  constraints: []       # hard rules the world must not violate
+  unresolved: []         # open decisions not yet made — list them, do not silently assume
+  decision_log: []       # ids of decision records (see decision.yaml) affecting this manifest
+
+reality_model:
+  genre_calibration: realistic   # realistic | low-fantasy | high-fantasy | science-fiction | surreal | mixed
+  physics_or_metaphysics: []
+  causality_level: calibrated     # strict | calibrated | symbolic
+  information_technology: null
+  map_status: absent              # absent | conceptual | canonical

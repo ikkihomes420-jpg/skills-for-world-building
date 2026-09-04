@@ -1,0 +1,15 @@
+kind: knowledge
+id: knowledge.<slug>
+label: <short-proposition-title>
+proposition: <what a holder believes or can access>
+truth_status: believed
+holders: []
+channel: <witness|rumor|archive|dispatch|press|divination|inference>
+reliability: mixed
+date_or_sequence: null
+visibility: actor-specific
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+branch: mainline
+sources: []

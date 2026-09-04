@@ -1,0 +1,25 @@
+kind: state-transition
+id: transition.<slug>
+from_state: state.<slug>
+date_or_sequence: null
+inputs:
+  world_forces: []
+  actor_actions: []
+  user_or_player_action: null
+  knowledge_constraints: []
+resolution_basis:
+  rules: []
+  resources: []
+  uncertainties: []
+outcomes: []
+state_delta:
+  records_changed: []
+  consequences_created: []
+  consequences_resolved: []
+next_state: state.<slug>
+player_choice_boundary: null
+status: provisional
+authority: inferred
+confidence: plausible
+branch: mainline
+sources: []

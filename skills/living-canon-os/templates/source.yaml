@@ -1,0 +1,8 @@
+kind: source
+id: source.<slug>
+source_type: <author-decision|primary-source|secondary-source|reference-work|project-note|generated-inference>
+locator: <conversation:session-01#turn-12|URL|file-path|note-id>
+scope: <what this source supports or limits>
+reliability: high
+use_status: <verified|interpreted|adapted|inspiration-only>
+license_or_permission: null

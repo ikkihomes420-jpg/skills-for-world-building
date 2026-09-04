@@ -1,0 +1,18 @@
+# Storycraft OS — source record and claim
+source_record:
+  id: src-001
+  kind: author-decision # author-decision | primary-source | secondary-source | reference-work | project-note | generated-inference
+  citation_or_locator: null
+  access_date: null
+  scope: null
+  reliability: unknown # high | mixed | low | unknown
+  use_status: inspiration-only # verified | interpreted | adapted | inspiration-only
+  license_or_permission: null
+
+claim:
+  id: clm-001
+  statement: null
+  status: provisional # approved | provisional | disputed | deprecated
+  support: [src-001]
+  confidence: unknown # confirmed | plausible | speculative | unknown
+  affected_ids: []

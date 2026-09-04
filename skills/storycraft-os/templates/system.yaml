@@ -1,0 +1,16 @@
+# Storycraft OS — Systems Map starter
+# One record per consequential interface: ecology, economy, politics, culture,
+# information, technology, or magic. See references/world-artifacts.md §3.
+
+system:
+  id: ""                    # e.g. sys-water-law
+  domain: ""                 # ecology | economy | politics | culture | technology | magic | information | infrastructure
+  statement: ""               # the system's rule or recurring behavior, in one sentence
+  inputs: []
+  outputs: []
+  constraints: []
+  beneficiaries: []
+  burdened: []
+  failure_modes: []
+  linked_entities: []          # entity ids this system touches
+  evidence: []

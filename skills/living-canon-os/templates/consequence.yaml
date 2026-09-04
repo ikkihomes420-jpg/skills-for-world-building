@@ -1,0 +1,13 @@
+kind: consequence
+id: consequence.<slug>
+origin: <event-or-decision-id>
+scale: <personal|relational|institutional|structural|civilizational>
+affected_ids: []
+current_state: latent
+next_surface: <condition, trigger, or likely window>
+author_intent: optional
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+branch: mainline
+sources: []

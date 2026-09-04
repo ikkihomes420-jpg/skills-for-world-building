@@ -1,0 +1,88 @@
+# Storycraft OS — worked example bundle
+#
+# A minimal, internally-consistent bundle showing how the individual record
+# templates in this folder combine into one validated whole. Validate it
+# directly:
+#
+#   python3 scripts/validate_world_bundle.py templates/example-world-bundle.yaml
+#
+# Copy this file as the starting point for a real bundle, or assemble the
+# individual templates (world-manifest.yaml, entity.yaml, etc.) into this
+# same shape by hand.
+
+# Schema version is separate from the world’s own canon version.
+schema_version: "0.3"
+
+world:
+  id: reed-confederacy
+  name: The Reed Confederacy
+  version: 0.1.0
+  status: draft
+  uses: [worldbuilding, campaign]
+  design_promise: >-
+    A river-confederacy world where seasonal logistics, ritual obligation,
+    and kinship shape politics more than territorial conquest.
+  scale: regional
+  canon_sources: []
+  constraints: []
+  unresolved: []
+  decision_log: []
+
+entities:
+  - id: fac-001
+    type: faction
+    name: The Reed Compact
+    aliases: []
+    status: approved
+    summary: A river-basin confederation bound by seasonal flood-control obligation.
+    scope: regional
+    dependencies: []
+    relationships: []
+    resources: [grain-surplus, flood-labor-levy]
+    beliefs_and_values: [reciprocal-obligation]
+    constraints: [cannot-conscript-outside-flood-season]
+    public_knowledge: []
+    private_knowledge: []
+    sources: []
+
+systems:
+  - id: sys-flood-labor
+    domain: economy
+    statement: Every member settlement owes labor-days to seasonal levee maintenance.
+    inputs: [labor, grain-tax]
+    outputs: [flood-protection, political-legitimacy]
+    constraints: [labor-only-owed-during-flood-season]
+    beneficiaries: [fac-001]
+    burdened: [downstream-settlements]
+    failure_modes: [levee-neglect-during-war]
+    linked_entities: [fac-001]
+    evidence: []
+
+events:
+  - id: evt-001
+    date_or_sequence: "Year 12, flood season"
+    name: The Levee Accord
+    status: approved
+    causes: []
+    event: Member settlements formalize labor-day obligations into a written accord.
+    immediate_effects: [fac-001 gains standing authority to levy labor]
+    delayed_effects: []
+    affected_entities: [fac-001]
+    sources: []
+    counterfactual_branch: null
+
+decisions: []
+
+knowledge_ledger: []
+
+consequence_ledger: []
+
+session_state:
+  date_or_sequence: "Year 12, post-flood season"
+  pause_point: "Accord signed; first labor levy not yet called."
+  active_entities: [fac-001]
+  active_situations: []
+  consequence_ids: []
+  open_threads: []
+  player_choice_boundary: null
+  drift_watch: []

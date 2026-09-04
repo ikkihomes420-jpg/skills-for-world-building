@@ -1,0 +1,28 @@
+kind: manifest
+id: manifest.<project-slug>
+name: <display-name>
+version: 0.1.0
+status: active
+uses: [worldbuilding]
+design_promise: >-
+  <Describe the intended experience or outcome, its governing pressures, and
+  what this project deliberately will not attempt.>
+scale: local
+reality_model:
+  genre_calibration: mixed
+  causality_level: calibrated
+  map_status: absent
+canon_policy:
+  capture_mode: approval-required
+  default_branch: mainline
+  canonical_sources: []
+  authority_order:
+    - user-approved
+    - source-backed
+    - imported
+    - assistant-proposed
+    - inferred
+constraints: []
+unresolved: []
+decision_log: []
+last_updated: <YYYY-MM-DD>

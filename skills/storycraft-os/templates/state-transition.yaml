@@ -1,0 +1,23 @@
+# Storycraft OS — state transition
+id: turn-001
+from_state: state-001
+date_or_sequence: null
+inputs:
+  world_forces: []
+  actor_actions: []
+  user_or_player_action: null
+  knowledge_constraints: []
+resolution_basis:
+  rules: []
+  resources: []
+  uncertainties: []
+outcomes: []
+state_delta:
+  entities_changed: []
+  systems_changed: []
+  knowledge_changed: []
+  consequences_created: []
+  consequences_resolved: []
+next_state: state-002
+player_choice_boundary: null
+canon_status: provisional # provisional | approved

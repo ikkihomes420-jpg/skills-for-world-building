@@ -1,0 +1,20 @@
+# Storycraft OS — Canon Decision and Audit Finding starters
+# See references/world-artifacts.md §8 and references/world-audit-and-governance.md §2-3.
+
+decision:
+  id: ""                    # e.g. dec-001
+  question: ""
+  chosen_option: ""
+  rationale: ""
+  affected_ids: []            # entity/system/event ids this decision touches
+  status: provisional          # approved | provisional | superseded
+  tests_required: []
+
+audit_finding:
+  id: ""                     # e.g. aud-001
+  severity: minor              # blocker | major | moderate | minor
+  type: underspecification      # contradiction | underspecification | unsupported-link | deliberate-exception | drift
+  evidence: []
+  impact: null
+  repair_options: []            # provide at least two viable options where practical
+  decision_needed: false

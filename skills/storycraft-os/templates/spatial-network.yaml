@@ -1,0 +1,28 @@
+# Storycraft OS — spatial-temporal network
+calendar:
+  id: cal-001
+  name: null
+  units: [day, season, year]
+  epochs: []
+  conversion_notes: null
+
+locations:
+  - id: loc-001
+    type: settlement # settlement | region | route-node | landmark | realm | orbit | plane
+    name: null
+    parent: null
+    terrain_or_medium: null
+    access_constraints: []
+    controlling_entities: []
+    status: provisional
+
+connections:
+  - id: con-001
+    from: loc-001
+    to: loc-002
+    mode: road # foot | road | river | sea | rail | air | portal | relay
+    availability: conditional # constant | seasonal | conditional | disputed
+    travel_cost: null
+    communication_cost: null
+    hazards: []
+    rules: []

@@ -1,0 +1,173 @@
+- kind: manifest
+  id: manifest.reed-delta
+  name: The Reed Delta
+  version: 0.1.0
+  status: active
+  uses: [worldbuilding, campaign]
+  design_promise: >-
+    A river-confederacy setting where seasonal logistics, ritual obligation,
+    and control of information shape political power more than territorial conquest.
+  scale: regional
+  reality_model:
+    genre_calibration: low-fantasy
+    causality_level: calibrated
+    map_status: conceptual
+  canon_policy:
+    capture_mode: approval-required
+    default_branch: mainline
+    canonical_sources: [source.session-001]
+    authority_order: [user-approved, source-backed, imported, assistant-proposed, inferred]
+  constraints: [rule.flood-oath]
+  unresolved: [question.speaker-succession]
+  decision_log: [decision.delta-charter]
+  last_updated: 2026-08-26
+
+- kind: source
+  id: source.session-001
+  source_type: author-decision
+  locator: conversation:session-001#turn-12
+  scope: Initial approved world contract and core political constraints.
+  reliability: high
+  use_status: verified
+  license_or_permission: null
+
+- kind: entity
+  id: entity.reed-compact
+  type: faction
+  label: The Reed Compact
+  aliases: [Compact]
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  visibility: author-only
+  branch: mainline
+  summary: A federation of river cities bound by annual flood oaths.
+  scope: Lower Delta
+  dependencies: [rule.flood-oath]
+  relationships: []
+  attributes:
+    governance: rotating speaker council
+  sources: [source.session-001]
+  supersedes: null
+  redirects_to: null
+
+- kind: rule
+  id: rule.flood-oath
+  label: Flood oath obligation
+  statement: Each member city must open reserve granaries during a certified flood emergency.
+  layer: social
+  strength: default
+  scope: [entity.reed-compact]
+  triggers: [event.red-flood]
+  consequences: [consequence.grain-debt]
+  exceptions: []
+  authority_type: institution
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  visibility: author-only
+  branch: mainline
+  sources: [source.session-001]
+  supersedes: null
+
+- kind: event
+  id: event.red-flood
+  label: The Red Flood
+  date_or_sequence: Year 18, High Water
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  branch: mainline
+  summary: Floodwater breaches the eastern levees and destroys three grain districts.
+  causes: [Seasonal storm surge]
+  immediate_effects: [Reserve granaries open under the flood oath.]
+  delayed_effects: [Debt claims intensify among member cities.]
+  affected_ids: [entity.reed-compact]
+  sources: [source.session-001]
+  knowledge_accounts: []
+  counterfactual_branch: null
+
+- kind: consequence
+  id: consequence.grain-debt
+  origin: event.red-flood
+  scale: institutional
+  affected_ids: [entity.reed-compact]
+  current_state: developing
+  next_surface: The next speaker council votes on reserve repayment.
+  author_intent: optional
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  branch: mainline
+  sources: [source.session-001]
+
+- kind: decision
+  id: decision.delta-charter
+  question: Which city controls emergency grain certification?
+  options: [Rotate the authority, centralize it, let each city self-certify]
+  chosen_option: Rotate the authority annually among member cities.
+  rationale: Prevents a permanent hegemon while preserving a shared institution.
+  affected_ids: [entity.reed-compact, rule.flood-oath]
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  sources: [source.session-001]
+  branch: mainline
+
+- kind: open-question
+  id: question.speaker-succession
+  question: Can an acting speaker legally retain authority after their home city breaks the flood oath?
+  importance: high
+  related_ids: [entity.reed-compact, rule.flood-oath, consequence.grain-debt]
+  next_review: Before the next speaker council scene.
+  status: provisional
+  authority: user-approved
+  confidence: unknown
+  branch: mainline
+  sources: [source.session-001]
+
+- kind: actor-state
+  id: actor-state.reed-compact
+  entity_id: entity.reed-compact
+  objective_now: Preserve federation unity while managing the grain shortfall.
+  long_horizon: Keep outside empires from gaining a foothold in delta governance.
+  capabilities: [Shared grain ledger, river patrols, rotating council]
+  vulnerabilities: [Mutual debt, fragmented local loyalty]
+  resources: [Reserve granaries, river transport]
+  constraints: [rule.flood-oath]
+  internal_divisions: [Eastern cities accuse western cities of delayed relief.]
+  public_position: The Compact will honor every certified obligation.
+  private_agenda: Several councilors seek permanent emergency authority.
+  current_pressure: The repayment vote may split the federation.
+  knowledge_ids: []
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  branch: mainline
+  sources: [source.session-001]
+
+- kind: state-transition
+  id: transition.red-flood-aftermath
+  from_state: state.year-18-high-water
+  date_or_sequence: Year 18, High Water + 14 days
+  inputs:
+    world_forces: [Flood damage, falling grain reserves]
+    actor_actions: [The council opens reserve granaries.]
+    user_or_player_action: null
+    knowledge_constraints: [Eastern cities do not know which councilors seek emergency powers.]
+  resolution_basis:
+    rules: [rule.flood-oath]
+    resources: [Reserve granaries, river transport]
+    uncertainties: [True scale of the eastern crop failure]
+  outcomes: [Emergency relief begins, but repayment obligations become politically salient.]
+  state_delta:
+    records_changed: [entity.reed-compact]
+    consequences_created: [consequence.grain-debt]
+    consequences_resolved: []
+  next_state: state.year-18-aftermath
+  player_choice_boundary: Decide whether to expose the private emergency-power coalition.
+  status: approved
+  authority: user-approved
+  confidence: confirmed
+  branch: mainline
+  sources: [source.session-001]

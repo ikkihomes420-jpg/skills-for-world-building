@@ -1,0 +1,16 @@
+kind: change-set
+id: change.<slug>
+from_version: 0.1.0
+to_version: 0.2.0
+status: proposed
+changes:
+  - action: <add|modify|deprecate|redirect|split|merge>
+    target_id: <record-id>
+    replacement_ids: []
+    rationale: <why this change is required>
+    expected_impacts: []
+    migration_notes: null
+verification: []
+author_decision: null
+sources: []
+branch: mainline

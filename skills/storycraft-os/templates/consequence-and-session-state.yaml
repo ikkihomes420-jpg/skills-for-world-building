@@ -1,0 +1,23 @@
+# Storycraft OS — Consequence Ledger and Active Session State starters
+# See references/world-artifacts.md §7. Keep session_state limited to what is
+# currently active; archive dormant material back into the world bible.
+
+consequence:
+  id: ""                   # e.g. cons-001
+  origin: ""                 # event-id or decision-id
+  scale: personal            # personal | relational | institutional | structural | civilizational
+  affected: []                # entity ids
+  current_state: latent        # latent | developing | visible | transformed | resolved
+  next_surface: ""              # condition, trigger, or likely window for this to surface
+  author_intent: unknown         # required | optional | unknown
+  evidence: []
+
+session_state:
+  date_or_sequence: null
+  pause_point: null
+  active_entities: []
+  active_situations: []
+  consequence_ids: []
+  open_threads: []
+  player_choice_boundary: null   # required (even as null) for interactive-fiction/campaign/simulation uses
+  drift_watch: []

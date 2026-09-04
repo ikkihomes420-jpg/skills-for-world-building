@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.1",
+  "language": {
+    "id": "example-language",
+    "name": "Example Language",
+    "status": "draft",
+    "version": "0.1.0",
+    "purpose": "dialogue",
+    "design_promise": "Replace this with a bounded design promise and measurable completion test.",
+    "canonical_sources": [
+      "canon.md",
+      "language.json",
+      "corpus.md"
+    ],
+    "unresolved": [],
+    "decisions": []
+  },
+  "constraints": [
+    {
+      "id": "C-001",
+      "statement": "Replace this with a testable project constraint.",
+      "source": "project brief",
+      "status": "approved",
+      "scope": [
+        "phonology"
+      ],
+      "pass_condition": "Describe how compliance will be tested.",
+      "exceptions": []
+    }
+  ],
+  "profile": {
+    "morphology": "agglutinative",
+    "alignment": "nominative-accusative",
+    "clause_order": "SOV",
+    "head_direction": "final",
+    "evidence": []
+  },
+  "phonology": {
+    "normalization": "NFC",
+    "tokenization": "longest_match",
+    "phonemes": [
+      {
+        "id": "ph-a",
+        "symbol": "a",
+        "ipa": "a",
+        "status": "approved",
+        "generator_weight": 1.0,
+        "groups": [
+          "vowels"
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "vowels",
+        "members": [
+          "ph-a"
+        ]
+      }
+    ],
+    "syllable_templates": [
+      {
+        "id": "SYL-001",
+        "slots": [
+          {
+            "group": "vowels",
+            "optional": false
+          }
+        ],
+        "generation_weight": 1.0
+      }
+    ],
+    "illegal_clusters": [],
+    "processes": [],
+    "stress_or_tone": null
+  },
+  "writing": {
+    "native_script": null,
+    "native_form_field": "native",
+    "phonemic_layer": "IPA",
+    "orthography_layer": "romanization",
+    "conversion_order": [],
+    "unicode_normalization": "NFC",
+    "direction": "LTR",
+    "boundary_conventions": []
+  },
+  "lexicon": [
+    {
+      "id": "L-0001",
+      "headword": "a",
+      "forms": {
+        "native": null,
+        "transliteration": "a",
+        "romanization": "a",
+        "ipa": "a"
+      },
+      "tokenization": [
+        "ph-a"
+      ],
+      "pos": "particle",
+      "status": "proposed",
+      "provenance": {
+        "type": "hand_created",
+        "source": null,
+        "note": "Replace with an explicit origin when relevant."
+      },
+      "senses": [
+        {
+          "id": "S-0001",
+          "pos": "particle",
+          "gloss": "EXAMPLE",
+          "definition": "Replace with a precise meaning and distribution.",
+          "semantic_field": [],
+          "register": "neutral",
+          "valency": null,
+          "examples": []
+        }
+      ],
+      "morphology": {
+        "root": "a",
+        "derivation": [],
+        "irregular_forms": []
+      },
+      "relations": {
+        "synonyms": [],
+        "antonyms": [],
+        "etymology_parent": null
+      },
+      "tags": [],
+      "notes": null
+    }
+  ],
+  "paradigms": [],
+  "morphology_rules": [],
+  "rewrite_rules": [],
+  "rules": [],
+  "generators": [],
+  "candidates": [],
+  "corpus": [],
+  "tests": [],
+  "translation_deltas": [],
+  "audits": [],
+  "release": {
+    "language_version": "0.1.0",
+    "bundle_schema_version": "1.1",
+    "source_snapshot": null,
+    "audits": [],
+    "known_issues": [],
+    "round_trip": "not_run",
+    "public_scope": "private"
+  }
+}
