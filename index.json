@@ -1,0 +1,37 @@
+{
+  "skillset_name": "Worldbuilding Skills",
+  "description": "A connected suite of five skills for building fictional worlds: gradual development, world systems and simulation, living canon, constructed languages, and evidence-first research. All five share one record vocabulary, so output from one imports cleanly into the others.",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "gradual-worldbuilding",
+      "path": "skills/gradual-worldbuilding/SKILL.md",
+      "description": "The pace-and-method layer: develop worlds in earned layers instead of rushing toward an empire, endpoint, or encyclopedia. Governs sequencing, stage-gates, development ladders, and measurable capacity thresholds, and hands each increment off to the other skills in their own record formats.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "storycraft-os",
+      "path": "skills/storycraft-os/SKILL.md",
+      "description": "Build, simulate, govern, audit, and publish fictional worlds as durable causal systems: factions, cultures, religions, economies, ecology, geography, infrastructure, technology or magic systems, timelines, maps, campaigns, and persistent world state.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "living-canon-os",
+      "path": "skills/living-canon-os/SKILL.md",
+      "description": "Build, maintain, recall, audit, branch, and hand off durable living knowledge bases with transaction-governed canon changes and grounded retrieval: world bibles, lore and canon systems, campaign or series state, and continuity memory.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "conlang-design",
+      "path": "skills/conlang-design/SKILL.md",
+      "description": "Design, expand, document, audit, test, translate, or evolve constructed languages as coherent, versioned communicative systems: phonology, phonotactics, grammar, lexicon, scripts, diachrony, corpus work, and interlinear glossing.",
+      "version": "1.0.0"
+    },
+    {
+      "name": "worldbuilding-research",
+      "path": "skills/worldbuilding-research/SKILL.md",
+      "description": "Evidence-first research for worldbuilding: structured specs, batched source collection, and source records with calibrated confidence claims, producing research that imports into the other skills without reformatting.",
+      "version": "1.0.0"
+    }
+  ]
+}

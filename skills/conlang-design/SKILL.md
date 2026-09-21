@@ -1,13 +1,6 @@
 ---
 name: conlang-design
-description: >
-  Design, expand, document, audit, test, translate, or evolve constructed
-  languages as coherent, versioned communicative systems. Use for artlangs,
-  auxiliary languages, naming systems, fictional language families, phonology,
-  phonotactics, grammar, morphology, syntax, lexicon design, word generation,
-  scripts, romanization, diachrony, corpus work, interlinear glossing,
-  translation, language data, rule-based generators, and conlang workbench
-  or release workflows.
+description: Design, expand, document, audit, test, translate, or evolve constructed languages as coherent, versioned communicative systems. Use for artlangs, auxiliary languages, naming systems, fictional language families, phonology, phonotactics, grammar, morphology, syntax, lexicon design, word generation, scripts, romanization, diachrony, corpus work, interlinear glossing, translation, language data, rule-based generators, and conlang workbench or release workflows.
 ---
 
 # Conlang Design Toolkit

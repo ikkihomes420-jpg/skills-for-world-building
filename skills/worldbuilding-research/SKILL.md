@@ -1,14 +1,6 @@
 ---
 name: worldbuilding-research
-description: >
-  Plan and execute evidence-first research for worldbuilding projects: surveys
-  and comparisons of real-world source material (history, culture, linguistics,
-  technology, ecology), structured canon research for fictional settings, and
-  grounded decision-making for what becomes lore. Use for multi-item
-  investigations, source collection, comparative research, reference gathering,
-  evidence-led canon decisions, and research documentation that feeds
-  worldbuilding skills. Produces source records and claims that align with
-  storycraft-os, living-canon-os, and conlang-design record formats.
+description: Plan and execute evidence-first research for worldbuilding projects — surveys and comparisons of real-world source material (history, culture, linguistics, technology, ecology), structured canon research for fictional settings, and grounded decision-making for what becomes lore. Use for multi-item investigations, source collection, comparative research, reference gathering, evidence-led canon decisions, and research documentation that feeds worldbuilding skills. Produces source records and claims that align with storycraft-os, living-canon-os, and conlang-design record formats.
 ---
 
 # Worldbuilding Research

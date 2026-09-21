@@ -66,14 +66,31 @@ Skills are plain directories with a `SKILL.md` entry point, so they work with an
 > ```
 >
 > **If it asks for a file** — a `SKILL.md` to fetch over HTTP — give it one of the
-> `raw.githubusercontent.com` links in section 3 below.
+> `raw.githubusercontent.com` links in section 4 below.
 >
 > These are **not interchangeable**. Pasting a *raw file URL* into a *repository*
 > field makes the tool try to `git clone` a text file; GitHub answers
 > `404: Not Found`, and the client reports it as
 > *"Could not access repository … This may be a private repository."*
 
-### 1. Claude Code — plugin marketplace (one command)
+### 1. Skillset apps (SuperAgent, and tools that read a skillset index)
+
+These clone the repository and read **`index.json` at the repo root**, which lists
+every skill and the path to its `SKILL.md`. Add the repository URL:
+
+```
+https://github.com/ikkihomes420-jpg/skills-for-world-building
+```
+
+Leave the token field empty — the repository is public.
+
+> **Keep `index.json` current.** It is the source of truth these tools read. When
+> you add, rename, move, or re-version a skill, update its entry in `index.json`.
+> A `path` must point at that skill's `SKILL.md` file. Entries that fail to parse
+> are dropped silently, so a stale entry makes a skill vanish from the app with no
+> error shown.
+
+### 2. Claude Code — plugin marketplace (one command)
 
 ```
 /plugin marketplace add ikkihomes420-jpg/skills-for-world-building
@@ -82,7 +99,7 @@ Skills are plain directories with a `SKILL.md` entry point, so they work with an
 
 Installs all five skills at once. This works because the repository ships `.claude-plugin/marketplace.json`.
 
-### 2. Claude Code / Claude apps — copy the directories
+### 3. Claude Code / Claude apps — copy the directories
 
 ```bash
 git clone https://github.com/ikkihomes420-jpg/skills-for-world-building.git
@@ -94,7 +111,7 @@ mkdir -p ~/.claude/skills && cp -r skills-for-world-building/skills/* ~/.claude/
 mkdir -p .claude/skills && cp -r skills-for-world-building/skills/* .claude/skills/
 ```
 
-### 3. Agents that fetch a single file (raw URL) — *not* a repository URL
+### 4. Agents that fetch a single file (raw URL) — *not* a repository URL
 
 Point it directly at the `SKILL.md` it needs. All five verified live and public.
 Use these only in tools that fetch a **file**; for tools that take a **repository**,
@@ -108,7 +125,7 @@ use the repo URL above.
 | conlang-design | `https://raw.githubusercontent.com/ikkihomes420-jpg/skills-for-world-building/main/skills/conlang-design/SKILL.md` |
 | worldbuilding-research | `https://raw.githubusercontent.com/ikkihomes420-jpg/skills-for-world-building/main/skills/worldbuilding-research/SKILL.md` |
 
-### 4. Clone or download
+### 5. Clone or download
 
 - Clone — `https://github.com/ikkihomes420-jpg/skills-for-world-building.git`
 - Zip — `https://github.com/ikkihomes420-jpg/skills-for-world-building/archive/refs/heads/main.zip`
@@ -133,7 +150,7 @@ GitHub returns **404 Not Found** rather than 403 when a credential is not permit
 | **Wrong URL** — a typo, a different account, or a path that doesn't exist | Use the exact URLs in [Install](#install); a bad path also returns 404 |
 | A **`raw.githubusercontent.com` file URL** pasted into a field that expects a **repository** | Give it `https://github.com/ikkihomes420-jpg/skills-for-world-building` — cloning a raw file URL fails with `404: Not Found` even with no credentials at all |
 | **Expired, revoked, or mistyped token** | Regenerate it, or drop the token entirely for a public repo |
-| The agent scrapes `github.com` HTML and gets blocked or rate-limited | Use a `raw.githubusercontent.com` URL (section 3) or the zip/tarball (section 4) |
+| The agent scrapes `github.com` HTML and gets blocked or rate-limited | Use a `raw.githubusercontent.com` URL (section 4) or the zip/tarball (section 5) |
 
 Check anonymously — if this prints `"private": false`, the repo is readable without any credential:
 

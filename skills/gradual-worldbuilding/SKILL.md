@@ -1,16 +1,6 @@
 ---
 name: gradual-worldbuilding
-description: >
-  Develop fictional worlds gradually, coherently, and in depth instead of
-  rushing toward an empire, endpoint, plot milestone, or encyclopedia. Use for
-  worldbuilding, alternate history, settings, lore, cultures, settlements,
-  factions, timelines, religions, economies, institutions, characters, maps,
-  and any project that needs layered development, critical partnership,
-  material realism, continuity, and author-controlled canon. Controls pacing,
-  sequencing, stage-gates, and development ladders; supplies measurable
-  capacity thresholds and hands each increment off to storycraft-os,
-  living-canon-os, worldbuilding-research, and conlang-design in their own
-  record formats.
+description: Develop fictional worlds gradually, coherently, and in depth instead of rushing toward an empire, endpoint, plot milestone, or encyclopedia. Use for worldbuilding, alternate history, settings, lore, cultures, settlements, factions, timelines, religions, economies, institutions, characters, maps, and any project that needs layered development, critical partnership, material realism, continuity, and author-controlled canon. Controls pacing, sequencing, stage-gates, and development ladders; supplies measurable capacity thresholds and hands each increment off to storycraft-os, living-canon-os, worldbuilding-research, and conlang-design in their own record formats.
 ---
 
 # Gradual Worldbuilding

@@ -1,15 +1,6 @@
 ---
 name: storycraft-os
-description: >
-  Build, simulate, govern, audit, and publish coherent fictional worlds as
-  durable causal systems. Use for worldbuilding, lore bibles, factions,
-  cultures, religions, economies, ecology, geography, infrastructure,
-  technology or magic systems, timelines, alternate history, maps, campaigns,
-  roleplay worlds, interactive simulation, canon management, event resolution,
-  and persistent world state. Trigger on worldbuilding, lore, setting, faction,
-  nation, culture, history, timeline, map, economy, religion, politics, magic
-  system, simulation, campaign, RPG, world bible, canon, continuity, or
-  alternate history.
+description: Build, simulate, govern, audit, and publish coherent fictional worlds as durable causal systems. Use for worldbuilding, lore bibles, factions, cultures, religions, economies, ecology, geography, infrastructure, technology or magic systems, timelines, alternate history, maps, campaigns, roleplay worlds, interactive simulation, canon management, event resolution, and persistent world state. Trigger on worldbuilding, lore, setting, faction, nation, culture, history, timeline, map, economy, religion, politics, magic system, simulation, campaign, RPG, world bible, canon, continuity, or alternate history.
 ---
 
 # Storycraft OS
