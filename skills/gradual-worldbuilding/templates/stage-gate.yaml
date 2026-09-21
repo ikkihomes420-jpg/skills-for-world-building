@@ -1,0 +1,58 @@
+# Gradual Worldbuilding — stage-gate assessment
+#
+# Copy once per advancement decision. Score each dimension 0-5 and cite an
+# observable or countable observation for every score. See
+# references/stage-gates.md for the anchors, the advance rule, and the ladder
+# rung indicators.
+#
+# A gate result is evidence, not canon. It informs the development increment;
+# it does not itself change the world.
+
+kind: stage-gate
+id: gate.<slug>
+title: <what advancement is being assessed>
+from_layer: <seed | outpost | settlement | marketplace | town | polity | kingdom | other>
+to_layer: <proposed next layer>
+date_or_sequence: null
+
+dimensions:
+  repeatability: # single feat -> predictable and scheduled
+    score: 0 # 0-5
+    observation: <named practice, group, or countable instance>
+  labour_and_maintenance: # nobody -> dedicated upkeep and resupply
+    score: 0
+    observation: <who performs it, with what, at whose cost>
+  knowledge_and_skill: # only the founder -> reproduced without the teacher
+    score: 0
+    observation: <who can do it and how it is taught>
+  continuity: # ends with one person -> documented, tested handoff
+    score: 0
+    observation: <who carries it on when the founder dies, leaves, or fails>
+  failure_and_disagreement: # unhandled -> handled repeatedly and revised
+    score: 0
+    observation: <stated fallback or dispute process>
+  beyond_one_household: # one home -> a region depends on it
+    score: 0
+    observation: <how many households or systems depend on it>
+  terminology_honesty: # title without function -> precise, world's own word
+    score: 0
+    observation: <the word used and the function actually demonstrated>
+
+rule_check:
+  hard_dimensions_all_at_least_2: false # repeatability, labour, knowledge, failure
+  at_least_five_dimensions_at_least_3: false
+  continuity_at_least_3: false # 4 if the founder is expected to leave/fail
+  reach_vs_control_satisfied: false # if claiming control, labour & reach >= 3
+  terminology_at_least_3: false
+
+result: held # held | conditional | passed
+smallest_next_increment: >-
+  The smallest change that would open the gate. An actor, an artifact, a rule,
+  a repair, or a named cost — not a time skip or a population jump.
+second_candidate_pressure: null # becomes the next increment if this one proceeds
+
+status: provisional
+authority: assistant-proposed
+confidence: plausible
+branch: mainline
+sources: []

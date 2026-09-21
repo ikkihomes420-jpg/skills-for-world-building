@@ -1,0 +1,139 @@
+# Gradual Worldbuilding — development increment
+#
+# One completed increment, packaged for handoff to a living-canon-os bundle.
+# Field names follow the living-canon-os templates exactly so the records
+# import without reformatting.
+#
+# Flow:
+#   capture_transaction.py  ->  review_transaction.py  ->  apply_transaction.py
+# Nothing here is canon until the author approves it. A passed stage-gate is
+# evidence, not approval.
+#
+# Trim to what the increment actually produced. Omit empty sections rather than
+# padding them.
+
+increment:
+  id: increment.<slug>
+  title: <short human-readable title>
+  layer_before: <seed | outpost | settlement | marketplace | town | polity | kingdom | other>
+  layer_after: <same value when the layer is held>
+  date_or_sequence: null
+  gate:
+    template: stage-gate.yaml
+    result: <passed | conditional | held>
+    note: <why the layer did or did not advance>
+  canon_action: <leave-provisional | propose | record-as-canon>
+
+  # Plain-language handoff for the author (the SKILL.md handoff block).
+  handoff:
+    established: []
+    changed: []
+    still_open: []
+    rejected_or_corrected: []
+    next_pressure: null
+
+  # --- Optional: kind: state-transition (living-canon-os) ---
+  # Use for a resolved simulation turn or a historical interval.
+  transition:
+    id: transition.<slug>
+    from_state: state.<slug>
+    inputs:
+      world_forces: []
+      actor_actions: []
+      user_or_player_action: null
+      knowledge_constraints: []
+    resolution_basis:
+      rules: []
+      resources: []
+      uncertainties: []
+    outcomes: []
+    state_delta:
+      records_changed: []
+      consequences_created: []
+      consequences_resolved: []
+    next_state: state.<slug>
+    player_choice_boundary: null
+
+  # --- Optional: kind: change-set (living-canon-os) ---
+  # Required when the increment moves established canon, renames, splits, or merges.
+  change_set:
+    id: change.<slug>
+    from_version: 0.1.0
+    to_version: 0.2.0
+    changes:
+      - action: add # add | modify | deprecate | redirect | split | merge
+        target_id: null
+        replacement_ids: []
+        rationale: null
+        expected_impacts: []
+        migration_notes: null
+    verification: []
+
+  # --- Optional: kind: consequence (living-canon-os) ---
+  # Keep latent consequences; do not convert them all into events.
+  consequences:
+    - id: consequence.<slug>
+      origin: <event-or-decision-id>
+      scale: <personal | relational | institutional | structural | civilizational>
+      affected_ids: []
+      current_state: latent # latent | developing | visible | transformed | resolved
+      next_surface: <condition, trigger, or likely window>
+      author_intent: optional
+      status: provisional
+      authority: assistant-proposed
+      confidence: plausible
+      branch: mainline
+      sources: []
+
+  # --- Optional: kind: claim (living-canon-os) ---
+  # Use for anything still provisional. Link `support` to source records when
+  # the claim depends on evidence (typically from worldbuilding-research).
+  claims:
+    - id: claim.<slug>
+      label: <short title>
+      statement: <the proposition>
+      detail: |-
+        <Rationale, caveats, scope, examples needed to interpret it accurately.>
+      status: provisional # provisional | approved | disputed | deprecated
+      authority: assistant-proposed
+      confidence: plausible # confirmed | plausible | speculative
+      truth_status: unknown # verified | believed | contested | false | unknown
+      visibility: author-only
+      branch: mainline
+      affected_ids: []
+      support: []
+      contradicts: []
+      notes: null
+
+  # --- Optional: kind: decision (living-canon-os) ---
+  decisions:
+    - id: decision.<slug>
+      question: <what needs an author decision?>
+      options: []
+      chosen_option: null
+      rationale: null
+      affected_ids: []
+      status: provisional
+      authority: user-approved
+      confidence: confirmed
+      branch: mainline
+      sources: []
+
+  # --- Optional: kind: open-question (living-canon-os) ---
+  open_questions:
+    - id: question.<slug>
+      question: <what remains unknown?>
+      importance: high # high | medium | low
+      related_ids: []
+      next_review: null
+      status: provisional
+      authority: user-approved
+      confidence: unknown
+      branch: mainline
+      sources: []
+
+  status: provisional
+  authority: assistant-proposed
+  confidence: plausible
+  branch: mainline
+  sources: []
