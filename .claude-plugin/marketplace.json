@@ -1,0 +1,19 @@
+{
+  "name": "worldbuilding-skills",
+  "owner": {
+    "name": "ikkihomes420-jpg",
+    "url": "https://github.com/ikkihomes420-jpg"
+  },
+  "metadata": {
+    "description": "A connected suite of five Agent Skills for worldbuilding: gradual development, world systems and simulation, living canon, conlang design, and evidence-first research.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "worldbuilding-suite",
+      "source": "./",
+      "description": "All five worldbuilding skills, installable in one step. Provides gradual-worldbuilding (pace and stage-gates), storycraft-os (systems and simulation), living-canon-os (canon storage and transactions), conlang-design (constructed languages), and worldbuilding-research (evidence-first research).",
+      "version": "1.0.0"
+    }
+  ]
+}

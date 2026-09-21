@@ -1,0 +1,11 @@
+{
+  "name": "worldbuilding-suite",
+  "description": "All five worldbuilding skills in one plugin: gradual-worldbuilding, storycraft-os, living-canon-os, conlang-design, and worldbuilding-research. Skills are auto-discovered from the skills/ directory.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ikkihomes420-jpg",
+    "url": "https://github.com/ikkihomes420-jpg"
+  },
+  "homepage": "https://github.com/ikkihomes420-jpg/skills-for-world-building",
+  "repository": "https://github.com/ikkihomes420-jpg/skills-for-world-building"
+}
