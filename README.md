@@ -57,6 +57,22 @@ This repository is **public**. No token, GitHub App, or authentication is requir
 
 Skills are plain directories with a `SKILL.md` entry point, so they work with any agent or tool that supports the Agent Skills convention.
 
+> ### Which URL does your tool want?
+>
+> **If it asks for a repository**, give it the repository URL:
+>
+> ```
+> https://github.com/ikkihomes420-jpg/skills-for-world-building
+> ```
+>
+> **If it asks for a file** — a `SKILL.md` to fetch over HTTP — give it one of the
+> `raw.githubusercontent.com` links in section 3 below.
+>
+> These are **not interchangeable**. Pasting a *raw file URL* into a *repository*
+> field makes the tool try to `git clone` a text file; GitHub answers
+> `404: Not Found`, and the client reports it as
+> *"Could not access repository … This may be a private repository."*
+
 ### 1. Claude Code — plugin marketplace (one command)
 
 ```
@@ -78,9 +94,11 @@ mkdir -p ~/.claude/skills && cp -r skills-for-world-building/skills/* ~/.claude/
 mkdir -p .claude/skills && cp -r skills-for-world-building/skills/* .claude/skills/
 ```
 
-### 3. Any agent that reads a raw file
+### 3. Agents that fetch a single file (raw URL) — *not* a repository URL
 
-Point it directly at the `SKILL.md` it needs. All five verified live and public:
+Point it directly at the `SKILL.md` it needs. All five verified live and public.
+Use these only in tools that fetch a **file**; for tools that take a **repository**,
+use the repo URL above.
 
 | Skill | Raw `SKILL.md` |
 | --- | --- |
@@ -113,6 +131,7 @@ GitHub returns **404 Not Found** rather than 403 when a credential is not permit
 | A **fine-grained PAT** scoped to *Only select repositories* that doesn't include this repo | Add `skills-for-world-building` to the token's repository access — or remove the token, since the repo is public |
 | A **GitHub App** that is not installed on this repo | Install the app on `skills-for-world-building`, or have its owner add the repo to the installation |
 | **Wrong URL** — a typo, a different account, or a path that doesn't exist | Use the exact URLs in [Install](#install); a bad path also returns 404 |
+| A **`raw.githubusercontent.com` file URL** pasted into a field that expects a **repository** | Give it `https://github.com/ikkihomes420-jpg/skills-for-world-building` — cloning a raw file URL fails with `404: Not Found` even with no credentials at all |
 | **Expired, revoked, or mistyped token** | Regenerate it, or drop the token entirely for a public repo |
 | The agent scrapes `github.com` HTML and gets blocked or rate-limited | Use a `raw.githubusercontent.com` URL (section 3) or the zip/tarball (section 4) |
 
@@ -121,6 +140,40 @@ Check anonymously — if this prints `"private": false`, the repo is readable wi
 ```bash
 curl -s https://api.github.com/repos/ikkihomes420-jpg/skills-for-world-building | grep '"private"'
 ```
+
+### The exact error: `Could not access repository`
+
+This is what a **repository-scoped** tool reports — one that clones or lists refs,
+and offers "repository token" or "SSH authentication" settings — when the thing it
+was handed is not a repository, or when the credential it sent is not valid.
+Two causes account for nearly every case:
+
+1. **A `raw.githubusercontent.com` file URL was given where a repository URL
+   belongs.** Git operations against a raw file URL return `404: Not Found`,
+   which the tool then reports as a possibly-private repository.
+2. **A stale or invalid token is saved in the tool's settings.**
+   `raw.githubusercontent.com` honours the `Authorization` header, so an invalid
+   token turns a public, working URL into a 404.
+
+Both are reproducible from a shell with no special access. The same public URL
+returns `200` anonymously and `404` when a bad token is attached:
+
+```bash
+# 200 — public, needs no credentials at all
+curl -s -o /dev/null -w '%{http_code}\n' \
+  https://raw.githubusercontent.com/ikkihomes420-jpg/skills-for-world-building/main/skills/living-canon-os/SKILL.md
+
+# 404 — same URL, with an invalid token in the header
+curl -s -o /dev/null -w '%{http_code}\n' \
+  -H 'Authorization: Bearer <any-invalid-token>' \
+  https://raw.githubusercontent.com/ikkihomes420-jpg/skills-for-world-building/main/skills/living-canon-os/SKILL.md
+```
+
+**Fix:** give repository-scoped tools the repo URL
+(`https://github.com/ikkihomes420-jpg/skills-for-world-building`) and leave the
+token field **empty** — the repository is public. If a token is already saved,
+clear it rather than replacing it, so a stale value can't break an otherwise
+working URL.
 
 ## License
 
